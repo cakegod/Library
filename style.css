@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
+
+* {
+  font-family: "Libre Baskerville", serif;
+  font-size: 17px;
+  --primary-color: #5e35b1;
+  --secondary-color: #9162e4;
+}
+
+body,
+html {
+  min-width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--secondary-color);
+}
+
+li {
+  list-style-type: none;
+  padding: 5px;
+}
+
+.material-icons-outlined {
+  align-self: flex-end;
+  font-family: 'Material Icons';
+  color: white;
+  transition: transform 0.25s, opacity 0.25s;
+  font-size: 20px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  transform: scale(0);
+  transition: all 0.25s;
+  width: fit-content;
+  padding: 0 30px 30px 30px;
+  display:flex;
+  flex-direction:column;
+
+}
+
+.form.active {
+  transform: scale(1);
+  background-color: var(--primary-color);
+}
+
+.navbar {
+  background-color: var(--primary-color);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#book-wrapper {
+  display: flex;
+  position: fixed;
+  flex-wrap: wrap;
+}
+
+.book {
+  padding: 10px 15px 15px 15px;
+  margin: 7px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 5%;
+  width: 180px;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
+
+.button {
+  border-radius: 18px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 6px 11px;
+  margin: 4px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+}
+
+.read {
+  background-color: #c74444;
+  border: none;
+}
+
+.read.active {
+  background-color: #44c767;
+}
+
+.delete {
+  background-color: #c74444;
+  border: none;
+}
+
+.submit {
+  background-color: var(--secondary-color);
+  border: none;
+}
+
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.plus-icon:hover {
+  transform: scale(1.1);
+  transition: all 0.3s;
+}
+
+.plus-icon {
+  font-size: 50px;
+}
+
+.book-wrapper {
+  transition: all 0.25s;
+}
+
+label {
+  color: white;
+}

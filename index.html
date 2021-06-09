@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar">
+      <span class="material-icons-outlined plus-icon">
+        add
+        </span>
+    </nav>
+
+    <div class="container">
+      <div id="book-wrapper"></div>
+      <div class="form-container">
+        <form type="submit" class="form">
+          <span class="material-icons-outlined minimize">
+            close
+            </span>
+          <li>
+            <label for="title">Book name</label> <br />
+            <input type="text" id="title" value="The Hobbit" />
+          </li>
+          <li>
+            <label for="author">Author</label> <br />
+            <input type="text" id="author" value="J.R.R Tolkin" />
+          </li>
+          <li>
+            <label for="pages">Pages</label> <br />
+            <input type="text" id="pages" value="295 pages" />
+          </li>
+          <li>
+            <label for="read">Read</label>
+            <input type="checkbox" id="readquestion" />
+          </li>
+          <button type="submit" class="submit button" />Submit
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
