@@ -70,12 +70,22 @@ function createBook(item) {
 };
 
 document.addEventListener("click", function (e) {
-  const read = document.querySelector(".read");
-  if (e.target.classList == "read button") {
-    read.addEventListener("click", () => read.classList.add("active"));
-  } else if (e.target.classList == "read button active") {
-    read.addEventListener("click", () => read.classList.remove("active"));
-  }
+  const read = document.querySelectorAll(".read");
+  read.forEach(eachBook => {
+    if (e.target.classList == "read button") {
+      eachBook.addEventListener("click", () => {
+        eachBook.classList.add("active");
+      });
+
+    } else if (e.target.classList == "read button active") {
+      eachBook.addEventListener("click", () => {
+        eachBook.classList.remove("active");
+      });
+    }
+  });
 });
 
+
 submit.addEventListener("click", addBookToLibrary);
+
+
