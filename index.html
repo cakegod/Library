@@ -12,39 +12,38 @@
       rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar">
-      <span class="material-icons-outlined plus-icon">
-        add
-        </span>
-    </nav>
-
     <div class="container">
-      <div id="book-wrapper"></div>
+    <nav class="navbar">
+      <span class="material-icons-outlined plus-icon"> add </span>
+    </nav>
+      <div id="book-wrapper">
+      </div>
       <div class="form-container">
         <form type="submit" class="form">
-          <span class="material-icons-outlined minimize">
+          <span class="material-icons-outlined close">
             close
             </span>
-          <li>
+          <li class="first">
             <label for="title">Book name</label> <br />
-            <input type="text" id="title" value="The Hobbit" />
+            <input type="text" id="title" required/>
           </li>
           <li>
             <label for="author">Author</label> <br />
-            <input type="text" id="author" value="J.R.R Tolkin" />
+            <input type="text" id="author" required/>
           </li>
           <li>
             <label for="pages">Pages</label> <br />
-            <input type="text" id="pages" value="295 pages" />
+            <input type="number" id="pages" required/>
           </li>
-          <li>
-            <label for="read">Read</label>
+          <li class="read-container">
+            <label for="readquestion">Read</label>
             <input type="checkbox" id="readquestion" />
           </li>
-          <button type="submit" class="submit button" />Submit
+          <button class="submit button" type="submit"/>Submit
         </form>
       </div>
+      <div class="footer"></div>
     </div>
+  </div>
   </body>
 </html>
-

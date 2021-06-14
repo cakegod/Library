@@ -1,29 +1,31 @@
 "use strict";
+
 let myLibrary = [];
-const submit = document.querySelector(".submit");
 const form = document.querySelector(".form");
-const body = document.querySelector("body");
 const bookWrapper = document.getElementById("book-wrapper");
-const minimize = document.querySelector(".minimize");
+const close = document.querySelector(".close");
 const addBookButton = document.querySelector(".plus-icon");
-let i = 0;
+let bookNumber = 0;
 
 addBookButton.addEventListener("click", () => form.classList.add("active"));
-minimize.addEventListener("click", () => form.classList.remove("active"));
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+close.addEventListener("click", () => form.classList.remove("active"));
+form.addEventListener("submit", addBookToLibrary);
+document.addEventListener("click", readToggle);
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
 }
 
 function addBookToLibrary(e) {
   e.preventDefault();
   let newBook = new Book(title.value, author.value, pages.value, readquestion.checked);
   myLibrary.push(newBook);
-
-  createBook(myLibrary[i]);
-  i++;
+  createBook(myLibrary[bookNumber]);
+  bookNumber++;
 }
 
 function createBook(item) {
@@ -34,21 +36,21 @@ function createBook(item) {
   const deleteBook = document.createElement("span");
   newBook.appendChild(deleteBook);
   deleteBook.textContent = "close";
-  deleteBook.className = "material-icons-outlined";
+  deleteBook.className = "material-icons-outlined close 1";
 
   const title = document.createElement("p");
   newBook.appendChild(title);
-  title.textContent = myLibrary[i].title;
+  title.textContent = myLibrary[bookNumber].title;
   title.className = "title";
 
   const author = document.createElement("p");
   newBook.appendChild(author);
-  author.textContent = myLibrary[i].author;
+  author.textContent = myLibrary[bookNumber].author;
   author.className = "author";
 
   const pages = document.createElement("p");
   newBook.appendChild(pages);
-  pages.textContent = myLibrary[i].pages;
+  pages.textContent = myLibrary[bookNumber].pages;
   pages.className = "pages";
 
   const read = document.createElement("button");
@@ -63,29 +65,23 @@ function createBook(item) {
   deleteBook.addEventListener("click", () => {
     newBook.remove();
     myLibrary.splice(myLibrary.indexOf(item), 1);
-    i--;
+    bookNumber--;
   }
   );
   form.reset();
 };
 
-document.addEventListener("click", function (e) {
-  const read = document.querySelectorAll(".read");
-  read.forEach(eachBook => {
-    if (e.target.classList == "read button") {
-      eachBook.addEventListener("click", () => {
-        eachBook.classList.add("active");
-      });
 
-    } else if (e.target.classList == "read button active") {
-      eachBook.addEventListener("click", () => {
-        eachBook.classList.remove("active");
-      });
-    }
-  });
-});
+function readToggle(event) {
+  const read = event.target;
+  if (read.classList == "read button") {
+    read.classList.add("active");
+
+  } else if (read.classList == "read button active") {
+    read.classList.remove("active");
+  }
+}
 
 
-submit.addEventListener("click", addBookToLibrary);
 
 
