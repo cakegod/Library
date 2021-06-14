@@ -69,6 +69,7 @@ function createBook(item) {
   }
   );
   form.reset();
+  form.classList.remove("active");
 };
 
 
@@ -79,6 +80,7 @@ function readToggle(event) {
 
   } else if (read.classList == "read button active") {
     read.classList.remove("active");
+    read.textContent = "Not Read";
   }
 }
 
