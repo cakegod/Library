@@ -58,7 +58,8 @@ function createBook(item) {
   read.textContent = "Read";
   if (readquestion.checked === true) {
     read.className = "read button active";
-  } else if (readquestion.checked === false) {
+  } else if (readquestion.checked === false)
+    read.textContent = "Not Read"; {
     read.className = "read button";
   }
 
@@ -77,6 +78,7 @@ function readToggle(event) {
   const read = event.target;
   if (read.classList == "read button") {
     read.classList.add("active");
+    read.textContent = "Read";
 
   } else if (read.classList == "read button active") {
     read.classList.remove("active");
