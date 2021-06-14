@@ -45,12 +45,12 @@ function createBook(item) {
 
   const author = document.createElement("p");
   newBook.appendChild(author);
-  author.textContent = myLibrary[bookNumber].author;
+  author.textContent = `by ${myLibrary[bookNumber].author}`;
   author.className = "author";
 
   const pages = document.createElement("p");
   newBook.appendChild(pages);
-  pages.textContent = myLibrary[bookNumber].pages;
+  pages.textContent = myLibrary[bookNumber].pages + " pages";
   pages.className = "pages";
 
   const read = document.createElement("button");
