@@ -17,7 +17,7 @@ const bookArray = {
 };
 
 bookDOM.addBookButton.addEventListener("click", () => bookDOM.form.classList.add("active"));
-bookDOM.close.addEventListener("click", () => bookDOM.orm.classList.remove("active"));
+bookDOM.close.addEventListener("click", () => bookDOM.form.classList.remove("active"));
 bookDOM.form.addEventListener("submit", addBookToLibrary);
 
 class Book {
