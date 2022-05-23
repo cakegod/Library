@@ -33,7 +33,6 @@
 		0px 16px 15px rgba(0, 0, 0, 0.164);
 	background-color: var(--lightestColor);
 	transform: scale(0);
-	transition: 0.5s;
 }
 
 .form.active {
