@@ -33,13 +33,14 @@
 		0px 16px 15px rgba(0, 0, 0, 0.164);
 	background-color: var(--lightestColor);
 	transform: scale(0);
-	
+	transition: 0.5s;
 }
 
 .form.active {
 	transform: scale(1);
 	transition: 0.3s;
 }
+
 .form-container {
 	display: flex;
 	height: 100%;
@@ -88,7 +89,7 @@ input:focus-visible {
 	border-radius: 4px;
 	height: 40px;
 	color: var(--lightestColor);
-	font-weight: 800;
+	font-weight: 700;
 	margin-top: 8px;
 	cursor: pointer;
 }
@@ -99,15 +100,17 @@ input:focus-visible {
 	transform: scale(1.05);
 }
 
+
+
 label {
 	color: var(--darkestColor);
 	font-weight: 700;
 }
 
-#readquestion {
+#readCheck {
 	width: 20px;
 	margin-left: 20px;
-	margin-top:0;
+	margin-top: 0;
 }
 
 .read-container {
@@ -149,11 +152,11 @@ label {
 	color: var(--darkestColor);
 	font-weight: 800;
 	margin: 16px 24px 24px 24px;
-  margin-bottom:0;
+	margin-bottom: 0;
 }
 
 .author {
-  color: var(--darkColor);
+	color: var(--darkColor);
 }
 
 .read {
@@ -172,15 +175,19 @@ label {
 	background-color: #dcfce7;
 }
 .plus-icon {
-	left: 50%;
-	position: fixed;
 	font-size: 64px;
 	color: white;
 	cursor: pointer;
 }
 
 .plus-icon:hover {
-	transform: rotate(180deg);
+	transform: rotate(180deg) scale(1.1);
+	color: var(--lightColor);
+	transition: 0.5s;
+}
+
+/* When not hovering plus icon decrease the transition slowly */
+.plus-icon:not(:hover) {
 	transition: 0.5s;
 }
 
@@ -192,4 +199,6 @@ label {
 	border-bottom: 4px solid;
 	border-color: var(--lightColor);
 	z-index: 50;
+	display: flex;
+	justify-content: center;
 }
